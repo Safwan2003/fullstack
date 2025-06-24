@@ -6,7 +6,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const Page = () => {
-  const [users, setUsers] = useState([]);
+  type User = {
+  id: number;
+  name: string;
+  email: string;
+};
+
+const [users, setUsers] = useState<User[]>([]);
   const [formData, setFormData] = useState({ name: '', email: '' });
 
   const getUsers = async () => {
